@@ -1,0 +1,52 @@
+{
+  "applications": ["micro"],
+  "changelogDate": "20220611155450",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "investor_portfolio",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "units",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "currentUnitPrice",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "balance",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "currentInvestedAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedOn",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "InvestorPortfolio",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "investor",
+      "otherEntityRelationshipName": "portfolio",
+      "ownerSide": false,
+      "relationshipName": "investor",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

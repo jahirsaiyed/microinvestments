@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="investorAccount">
+      <h2 data-cy="investorAccountDetailsHeading"><span jhiTranslate="microApp.investorAccount.detail.title">Investor Account</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="microApp.investorAccount.id">Id</span></dt>
+        <dd>
+          <span>{{ investorAccount.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="microApp.investorAccount.accountNo">Account No</span></dt>
+        <dd>
+          <span>{{ investorAccount.accountNo }}</span>
+        </dd>
+        <dt><span jhiTranslate="microApp.investorAccount.iBAN">I BAN</span></dt>
+        <dd>
+          <span>{{ investorAccount.iBAN }}</span>
+        </dd>
+        <dt><span jhiTranslate="microApp.investorAccount.type">Type</span></dt>
+        <dd>
+          <span>{{ investorAccount.type }}</span>
+        </dd>
+        <dt><span jhiTranslate="microApp.investorAccount.walletAddress">Wallet Address</span></dt>
+        <dd>
+          <span>{{ investorAccount.walletAddress }}</span>
+        </dd>
+        <dt><span jhiTranslate="microApp.investorAccount.walletNetwork">Wallet Network</span></dt>
+        <dd>
+          <span>{{ investorAccount.walletNetwork }}</span>
+        </dd>
+        <dt><span jhiTranslate="microApp.investorAccount.investor">Investor</span></dt>
+        <dd>
+          <div *ngIf="investorAccount.investor">
+            <a [routerLink]="['/investor', investorAccount.investor?.id, 'view']">{{ investorAccount.investor?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/investor-account', investorAccount.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

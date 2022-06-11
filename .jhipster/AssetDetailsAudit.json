@@ -1,0 +1,48 @@
+{
+  "applications": ["micro"],
+  "changelogDate": "20220611155850",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "asset_details_audit",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "units",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "unitPrice",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "balance",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "currentInvestedAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "profitLoss",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedOn",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "AssetDetailsAudit",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,5 @@
+export enum PROMOTIONTYPE {
+  CASHBACK = 'CASHBACK',
+
+  BONUS = 'BONUS',
+}

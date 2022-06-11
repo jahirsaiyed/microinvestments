@@ -1,0 +1,28 @@
+{
+  "microApp": {
+    "promotionsAudit": {
+      "home": {
+        "title": "Promotions Audits",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Promotions Audit",
+        "createOrEditLabel": "Create or edit a Promotions Audit",
+        "notFound": "No Promotions Audits found"
+      },
+      "created": "A new Promotions Audit is created with identifier {{ param }}",
+      "updated": "A Promotions Audit is updated with identifier {{ param }}",
+      "deleted": "A Promotions Audit is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Promotions Audit {{ id }}?"
+      },
+      "detail": {
+        "title": "Promotions Audit"
+      },
+      "id": "Id",
+      "description": "Description",
+      "type": "Type",
+      "amount": "Amount",
+      "createdOn": "Created On",
+      "updatedOn": "Updated On"
+    }
+  }
+}

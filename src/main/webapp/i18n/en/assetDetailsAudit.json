@@ -1,0 +1,30 @@
+{
+  "microApp": {
+    "assetDetailsAudit": {
+      "home": {
+        "title": "Asset Details Audits",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Asset Details Audit",
+        "createOrEditLabel": "Create or edit a Asset Details Audit",
+        "notFound": "No Asset Details Audits found"
+      },
+      "created": "A new Asset Details Audit is created with identifier {{ param }}",
+      "updated": "A Asset Details Audit is updated with identifier {{ param }}",
+      "deleted": "A Asset Details Audit is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Asset Details Audit {{ id }}?"
+      },
+      "detail": {
+        "title": "Asset Details Audit"
+      },
+      "id": "Id",
+      "units": "Units",
+      "unitPrice": "Unit Price",
+      "balance": "Balance",
+      "currentInvestedAmount": "Current Invested Amount",
+      "profitLoss": "Profit Loss",
+      "createdOn": "Created On",
+      "updatedOn": "Updated On"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="promotions">
+      <h2 data-cy="promotionsDetailsHeading"><span jhiTranslate="microApp.promotions.detail.title">Promotions</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="microApp.promotions.id">Id</span></dt>
+        <dd>
+          <span>{{ promotions.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="microApp.promotions.description">Description</span></dt>
+        <dd>
+          <span>{{ promotions.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="microApp.promotions.type">Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'microApp.PROMOTIONTYPE.' + promotions.type }}">{{ promotions.type }}</span>
+        </dd>
+        <dt><span jhiTranslate="microApp.promotions.amount">Amount</span></dt>
+        <dd>
+          <span>{{ promotions.amount }}</span>
+        </dd>
+        <dt><span jhiTranslate="microApp.promotions.createdOn">Created On</span></dt>
+        <dd>
+          <span>{{ promotions.createdOn | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="microApp.promotions.updatedOn">Updated On</span></dt>
+        <dd>
+          <span>{{ promotions.updatedOn | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/promotions', promotions.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

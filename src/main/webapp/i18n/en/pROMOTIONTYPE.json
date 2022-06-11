@@ -1,0 +1,9 @@
+{
+  "microApp": {
+    "PROMOTIONTYPE": {
+      "null": "",
+      "CASHBACK": "CASHBACK",
+      "BONUS": "BONUS"
+    }
+  }
+}

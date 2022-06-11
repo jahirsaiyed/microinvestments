@@ -1,0 +1,135 @@
+application {
+  config {
+	applicationType monolith
+    baseName micro
+    packageName com.finance.investment.micro
+    authenticationType jwt
+    prodDatabaseType postgresql
+    buildTool maven
+    clientFramework angularX
+	clientPackageManager npm
+	cacheProvider redis
+	dtoSuffix DTO
+    enableTranslation true
+	serverPort 8123
+    nativeLanguage en
+    languages [en]
+  }
+  entities *
+}
+
+entity Investor {
+	id Long     
+    name String required
+    email String required
+	gender Gender required
+    phone String required
+    addressLine1 String required
+    addressLine2 String
+    city String required
+    country String required
+	createdOn Instant
+}
+
+enum Gender {
+    MALE, FEMALE, OTHER
+}
+
+entity InvestorAccount {
+	id Long
+	accountNo String
+    iBAN String
+    type String
+    walletAddress String
+    walletNetwork String
+}
+
+entity Transaction {
+	id Long
+    type TRANSACTIONTYPE
+    amount BigDecimal
+    units BigDecimal
+    unitPrice BigDecimal
+    createdOn Instant
+    updatedOn Instant
+}
+
+entity InvestorPortfolio {
+	id Long
+    units BigDecimal
+    currentUnitPrice BigDecimal
+    balance BigDecimal
+    currentInvestedAmount BigDecimal
+    createdOn Instant
+    updatedOn Instant
+}
+
+entity AssetDetails {
+	id Long
+	units BigDecimal
+    unitPrice BigDecimal
+    balance BigDecimal
+    currentInvestedAmount BigDecimal
+    profitLoss BigDecimal // profit/loss
+    createdOn Instant
+    updatedOn Instant
+}
+
+entity Promotions {
+	id Long
+    description String
+    type PROMOTIONTYPE
+    amount BigDecimal
+    createdOn Instant
+    updatedOn Instant
+}
+
+entity PromotionsAudit {
+	id Long
+    description String
+    type PROMOTIONTYPE
+    amount BigDecimal
+    createdOn Instant
+    updatedOn Instant
+}
+
+enum PROMOTIONTYPE {
+	CASHBACK, BONUS
+}
+
+entity AssetDetailsAudit {
+	id Long
+	units BigDecimal // deposit, withdrawal
+    unitPrice BigDecimal // profit/loss, promotion
+    balance BigDecimal //profit/loss, deposit, withdrawal, promotion
+    currentInvestedAmount BigDecimal //deposit, withdrawal
+    profitLoss BigDecimal // profit/loss, promotion
+    createdOn Instant
+    updatedOn Instant
+}
+
+enum TRANSACTIONTYPE {
+    DEPOSIT, WITHDRAWAL
+}
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Investor{accounts} to InvestorAccount{investor},
+    Investor to Transaction{investor}
+}
+
+relationship OneToOne {
+    Investor{portfolio} to InvestorPortfolio{investor}
+}
+
+// Set pagination options
+paginate * with infinite-scroll
+paginate * with pagination
+
+
+dto * with mapstruct
+service * with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="promotionsAudit">
+      <h2 data-cy="promotionsAuditDetailsHeading"><span jhiTranslate="microApp.promotionsAudit.detail.title">Promotions Audit</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="microApp.promotionsAudit.id">Id</span></dt>
+        <dd>
+          <span>{{ promotionsAudit.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="microApp.promotionsAudit.description">Description</span></dt>
+        <dd>
+          <span>{{ promotionsAudit.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="microApp.promotionsAudit.type">Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'microApp.PROMOTIONTYPE.' + promotionsAudit.type }}">{{ promotionsAudit.type }}</span>
+        </dd>
+        <dt><span jhiTranslate="microApp.promotionsAudit.amount">Amount</span></dt>
+        <dd>
+          <span>{{ promotionsAudit.amount }}</span>
+        </dd>
+        <dt><span jhiTranslate="microApp.promotionsAudit.createdOn">Created On</span></dt>
+        <dd>
+          <span>{{ promotionsAudit.createdOn | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="microApp.promotionsAudit.updatedOn">Updated On</span></dt>
+        <dd>
+          <span>{{ promotionsAudit.updatedOn | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/promotions-audit', promotionsAudit.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

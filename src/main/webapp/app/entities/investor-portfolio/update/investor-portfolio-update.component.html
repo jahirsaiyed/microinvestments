@@ -1,0 +1,106 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-investor-portfolio-heading"
+        data-cy="InvestorPortfolioCreateUpdateHeading"
+        jhiTranslate="microApp.investorPortfolio.home.createOrEditLabel"
+      >
+        Create or edit a Investor Portfolio
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="microApp.investorPortfolio.id" for="field_id">Id</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="microApp.investorPortfolio.units" for="field_units">Units</label>
+          <input type="number" class="form-control" name="units" id="field_units" data-cy="units" formControlName="units" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="microApp.investorPortfolio.currentUnitPrice" for="field_currentUnitPrice"
+            >Current Unit Price</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="currentUnitPrice"
+            id="field_currentUnitPrice"
+            data-cy="currentUnitPrice"
+            formControlName="currentUnitPrice"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="microApp.investorPortfolio.balance" for="field_balance">Balance</label>
+          <input type="number" class="form-control" name="balance" id="field_balance" data-cy="balance" formControlName="balance" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="microApp.investorPortfolio.currentInvestedAmount" for="field_currentInvestedAmount"
+            >Current Invested Amount</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="currentInvestedAmount"
+            id="field_currentInvestedAmount"
+            data-cy="currentInvestedAmount"
+            formControlName="currentInvestedAmount"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="microApp.investorPortfolio.createdOn" for="field_createdOn">Created On</label>
+          <div class="d-flex">
+            <input
+              id="field_createdOn"
+              data-cy="createdOn"
+              type="datetime-local"
+              class="form-control"
+              name="createdOn"
+              formControlName="createdOn"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="microApp.investorPortfolio.updatedOn" for="field_updatedOn">Updated On</label>
+          <div class="d-flex">
+            <input
+              id="field_updatedOn"
+              data-cy="updatedOn"
+              type="datetime-local"
+              class="form-control"
+              name="updatedOn"
+              formControlName="updatedOn"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

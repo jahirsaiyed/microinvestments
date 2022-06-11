@@ -1,0 +1,29 @@
+{
+  "microApp": {
+    "investorAccount": {
+      "home": {
+        "title": "Investor Accounts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Investor Account",
+        "createOrEditLabel": "Create or edit a Investor Account",
+        "notFound": "No Investor Accounts found"
+      },
+      "created": "A new Investor Account is created with identifier {{ param }}",
+      "updated": "A Investor Account is updated with identifier {{ param }}",
+      "deleted": "A Investor Account is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Investor Account {{ id }}?"
+      },
+      "detail": {
+        "title": "Investor Account"
+      },
+      "id": "Id",
+      "accountNo": "Account No",
+      "iBAN": "I BAN",
+      "type": "Type",
+      "walletAddress": "Wallet Address",
+      "walletNetwork": "Wallet Network",
+      "investor": "Investor"
+    }
+  }
+}

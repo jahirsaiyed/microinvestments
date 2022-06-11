@@ -1,0 +1,28 @@
+{
+  "microApp": {
+    "promotions": {
+      "home": {
+        "title": "Promotions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Promotions",
+        "createOrEditLabel": "Create or edit a Promotions",
+        "notFound": "No Promotions found"
+      },
+      "created": "A new Promotions is created with identifier {{ param }}",
+      "updated": "A Promotions is updated with identifier {{ param }}",
+      "deleted": "A Promotions is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Promotions {{ id }}?"
+      },
+      "detail": {
+        "title": "Promotions"
+      },
+      "id": "Id",
+      "description": "Description",
+      "type": "Type",
+      "amount": "Amount",
+      "createdOn": "Created On",
+      "updatedOn": "Updated On"
+    }
+  }
+}
